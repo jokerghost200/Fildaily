@@ -3,12 +3,12 @@ import './Info.css'; // Assurez-vous d'importer le fichier CSS
 import Assistance_de_Direction from './Assets/Assistance_de_Direction.png';
 import Assistante_Marketing_Bilingue from './Assets/Assistante_Marketing_Bilingue.png';
 import Développeur_Java_Fullstack from './Assets/Développeur_Java_Fullstack.jpg';
-import Électronicien_Engins_Lourds from './Assets/Électronicien_Engins_Lourds.jpg';
+import Electronicien_Engins_Lourds from './Assets/Electronicien_Engins_Lourds.jpg';
 import Field_Officer from './Assets/Field_Officer.png';
 import Pharmacien_Grossiste from './Assets/Pharmacien_Grossiste.jpg'
 import Ressources_Humaines from './Assets/Ressources_Humaines.png';
 import Serveu from './Assets/Serveu.jpg'
-import Superviseur_des_Promoteurs_en_Électroménager from './Assets/Superviseur_des_Promoteurs_en_Électroménager.png'
+import Superviseur_des_Promoteurs_en_Electroménager from './Assets/Superviseur_des_Promoteurs_en_Electroménager.png'
 import { Link } from 'react-router-dom';
 import Footer from "./Footer";
 import MenuDeroulant from './MenuDeroulant';
@@ -36,7 +36,7 @@ Responsabilités :<br/><br/>
 • Respecter strictement les consignes de sécurité, les procédures internes et les normes en vigueur lors de chaque intervention ;<br/>
 • Collaborer avec les techniciens mécaniciens et hydrauliciens pour les interventions multidisciplinaires ;<br/>
 • Former ou accompagner les opérateurs et conducteurs d’engins sur l’usage optimal et l’entretien des dispositifs électroniques.<br/><br/><br/></p>,
-        image: Électronicien_Engins_Lourds,
+        image: Electronicien_Engins_Lourds,
     },
     {
         id: 2,
@@ -186,7 +186,7 @@ Missions :<br/><br/>
 • Réaliser des analyses du marché et du secteur<br/>
 • Collecter des informations sur les prix et les stratégies marketing<br/>
 • Proposer des améliorations pour les activités en magasin et les stratégies de vente<br/><br/><br/><br/></p>,
-        image: Superviseur_des_Promoteurs_en_Électroménager,
+        image: Superviseur_des_Promoteurs_en_Electroménager,
     },
 ];
 
