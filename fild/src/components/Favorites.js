@@ -59,8 +59,21 @@ const Favorites = () => {
     return (
         <div className='I-cont'>
             <header className="I-header2">
-                <Link to="/" className="home-link-accueil">Retour à l'accueil</Link>
-                <h1>Mes Favoris</h1>
+                <div className="header-left">
+                    <Link to="/" className="home-link-accueil">Retour à l'accueil</Link>
+                </div>
+                <div className="header-center">
+                    <h1>Mes Favoris</h1>
+                </div>
+                <div className="header-right">
+                    <div className="profile-picture2">
+                        <img src="url_vers_photo_profil.jpg" alt="Profil" />
+                    </div>
+                    <div className="header-buttons">
+                        <Link to="/Profile"><button className="header-btn">Profil</button></Link>
+                        <Link to="/Login"><button className="header-btn">Se connecter</button></Link>
+                    </div>
+                </div>
             </header>
             <main>
                 <div className="favorites-container">

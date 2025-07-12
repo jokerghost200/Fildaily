@@ -9,14 +9,82 @@
    position: fixed;
   top: 0;
   width: 100%;
-    text-align: center;
   height: 80px; /* ou selon ton besoin */
   background: linear-gradient(-45deg, #1f8eaf, #2c3e50, #3498db, #2980b9);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.header-center h1 {
+  margin: 0;
+  color: white;
+  font-size: 24px;
+}
+
+.header-center h1 a {
+  color: white;
+  text-decoration: none;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.header-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.home-link-accueil {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.home-link-accueil:hover {
+  color: #f0f0f0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
 
 
 main {
@@ -539,5 +607,71 @@ img {
   .contact-btn {
     font-size: 11px;
     padding: 6px 10px;
+  }
+}
+
+/* Responsive pour le header */
+@media (max-width: 768px) {
+  .I-header2 {
+    padding: 0 10px;
+    height: 70px;
+  }
+  
+  .header-center h1 {
+    font-size: 20px;
+  }
+  
+  .header-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .header-right {
+    gap: 10px;
+  }
+  
+  .profile-picture2 {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .profile-picture2 img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .I-header2 {
+    padding: 0 5px;
+    height: 60px;
+  }
+  
+  .header-center h1 {
+    font-size: 16px;
+  }
+  
+  .header-btn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  
+  .header-right {
+    gap: 5px;
+  }
+  
+  .profile-picture2 {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .profile-picture2 img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .header-buttons {
+    flex-direction: column;
+    gap: 2px;
   }
 }
