@@ -5,7 +5,7 @@
   padding: 0;
   font-family: Arial, sans-serif;
   background-image: url("./components/Assets/f1.jpg");
-  color: #1a1919; /* Couleur du t   exte blanche */
+  color: #1a1919; /* Couleur du texte noire */
   background-size: cover; /* Assure que l'image couvre tout l'écran */
   background-position: center; /* Centre l'image de fond */
   overflow: hidden;
@@ -38,9 +38,9 @@
 
 
 .profile-picture2 {
-right: 20px;
-top: 10px;
-justify-content: center;
+  right: 20px;
+  top: 10px;
+  justify-content: center;
   overflow: hidden;
   position: absolute;
   width: 90px;
@@ -50,7 +50,6 @@ justify-content: center;
   overflow: hidden;
   display: flex;
   align-items: center;
-
 }
 
 
@@ -147,13 +146,13 @@ justify-content: center;
 }
 
 .dropdown-menu {
-  position: relatif; /* Positionnement relatif pour le menu */
-  top: 100%; /* Positionne le menu juste en dessous de l'icône */
-  right: 0; /* Aligne à droite */
-  background-color: #9b9696; /* Couleur de fond du menu */
-  border-radius: 5px; /* Coins arrondis */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Ombre */
-  z-index: 1; /* Assure que le menu est au-dessus des autres éléments */
+  position: relative; /* Corrigé (au lieu de relatif) */
+  top: 100%;
+  right: 0;
+  background-color: #9b9696;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .dropdown-menu ul {
@@ -182,3 +181,9 @@ justify-content: center;
   top: 12%;
   right: 0;
 }
+
+.btn-accueil-b:focus, .btn-accueil-b2:focus, .btn-accueil button:focus {
+  outline: 2px solid #0077cc;
+  outline-offset: 2px;
+}
+
