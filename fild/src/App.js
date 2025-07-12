@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import ArticleStyle from './components/ArticleStyle'; 
 import Chats from './components/Chats';
 import MenuDeroulant from './components/MenuDeroulant';
+import Favorites from './components/Favorites';
 
 function HeaderOnlyOnHome() {
 
@@ -59,6 +60,10 @@ function FloatingButtons() {
         <span>💼</span>
         <span className="btn-tooltip">JobZone</span>
       </Link>
+      <Link to="/Favorites" className="floating-btn favorites-btn">
+        <span>❤️</span>
+        <span className="btn-tooltip">Mes Favoris</span>
+      </Link>
       <Link to="/Profile" className="floating-btn profile-btn">
         <span>👤</span>
         <span className="btn-tooltip">Profil</span>
@@ -89,6 +94,7 @@ function App() {
           <Route path="/RegisterForm" element={<RegisterForm />} />
           <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/Footer" element={<Footer />} />
+          <Route path="/Favorites" element={<Favorites />} />
         </Routes>
         <Footer />
       </div>

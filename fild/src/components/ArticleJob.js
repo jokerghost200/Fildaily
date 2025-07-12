@@ -1,4 +1,4 @@
- import React, { useState } from 'react';
+ import React, { useState, useEffect } from 'react';
 import './Info.css'; // Assurez-vous d'importer le fichier CSS
 import Assistance_de_Direction from './Assets/Assistance_de_Direction.png';
 import Assistante_Marketing_Bilingue from './Assets/Assistante_Marketing_Bilingue.png';
@@ -193,9 +193,39 @@ Missions :<br/><br/>
 const JournalPage = () => {
     const [selectedArticle, setSelectedArticle] = useState(null);
     const [searchQuery, setSearchQuery] = useState(''); // Ajout de l'état pour la recherche
+    const [favorites, setFavorites] = useState([]); // État pour les favoris
+
+    // Charger les favoris au démarrage
+    useEffect(() => {
+        const savedFavorites = localStorage.getItem('jobzone_favorites');
+        if (savedFavorites) {
+            setFavorites(JSON.parse(savedFavorites));
+        }
+    }, []);
+
+    // Sauvegarder les favoris quand ils changent
+    useEffect(() => {
+        localStorage.setItem('jobzone_favorites', JSON.stringify(favorites));
+    }, [favorites]);
 
     const handleArticleClick = (article) => {
         setSelectedArticle(article);
+    };
+
+    // Fonction pour ajouter/retirer des favoris
+    const toggleFavorite = (article) => {
+        const isFavorite = favorites.some(fav => fav.id === article.id && fav.type === 'job');
+        
+        if (isFavorite) {
+            setFavorites(favorites.filter(fav => !(fav.id === article.id && fav.type === 'job')));
+        } else {
+            setFavorites([...favorites, { ...article, type: 'job', dateAdded: new Date().toISOString() }]);
+        }
+    };
+
+    // Vérifier si un emploi est en favori
+    const isFavorite = (article) => {
+        return favorites.some(fav => fav.id === article.id && fav.type === 'job');
     };
 
     // Nouvelle fonction pour normaliser (sans accents, sans casse)
@@ -219,7 +249,16 @@ const JournalPage = () => {
                     <div className="I-details-content">
                         {selectedArticle ? (
                             <>
-                                <h2>{selectedArticle.title}</h2>
+                                <div className="article-header">
+                                    <h2>{selectedArticle.title}</h2>
+                                    <button 
+                                        className={`favorite-btn ${isFavorite(selectedArticle) ? 'favorited' : ''}`}
+                                        onClick={() => toggleFavorite(selectedArticle)}
+                                        title={isFavorite(selectedArticle) ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                                    >
+                                        {isFavorite(selectedArticle) ? '❤️' : '🤍'}
+                                    </button>
+                                </div>
                                 <img src={selectedArticle.image} alt={selectedArticle.title} />
                                 <p>{selectedArticle.description}</p>
                                 < MenuDeroulant/>

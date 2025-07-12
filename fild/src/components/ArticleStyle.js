@@ -1,4 +1,4 @@
- import React, { useState } from 'react';
+ import React, { useState, useEffect } from 'react';
 import './Home.css'; // Assurez-vous d'importer le fichier CSS
 import { Link } from 'react-router-dom';
 import Bepc from './Assets/Bepc.webp'
@@ -109,9 +109,52 @@ Le comité d’urgence rappelle que la gestion financière à la fédération fa
 const JournalPage = () => {
     const [selectedArticle, setSelectedArticle] = useState(null);
     const [searchQuery, setSearchQuery] = useState(''); // État pour la recherche
+    const [favorites, setFavorites] = useState([]); // État pour les favoris
+
+    // Charger les favoris au démarrage
+    useEffect(() => {
+        const savedFavorites = localStorage.getItem('actuzone_favorites');
+        if (savedFavorites) {
+            setFavorites(JSON.parse(savedFavorites));
+        }
+    }, []);
+
+    // Charger l'article sélectionné depuis les favoris
+    useEffect(() => {
+        const selectedArticleId = localStorage.getItem('selected_article_id');
+        if (selectedArticleId) {
+            const article = articles.find(art => art.id === parseInt(selectedArticleId));
+            if (article) {
+                setSelectedArticle(article);
+            }
+            // Nettoyer l'ID sélectionné après l'avoir utilisé
+            localStorage.removeItem('selected_article_id');
+        }
+    }, []);
+
+    // Sauvegarder les favoris quand ils changent
+    useEffect(() => {
+        localStorage.setItem('actuzone_favorites', JSON.stringify(favorites));
+    }, [favorites]);
 
     const handleArticleClick = (article) => {
         setSelectedArticle(article);
+    };
+
+    // Fonction pour ajouter/retirer des favoris
+    const toggleFavorite = (article) => {
+        const isFavorite = favorites.some(fav => fav.id === article.id && fav.type === 'article');
+        
+        if (isFavorite) {
+            setFavorites(favorites.filter(fav => !(fav.id === article.id && fav.type === 'article')));
+        } else {
+            setFavorites([...favorites, { ...article, type: 'article', dateAdded: new Date().toISOString() }]);
+        }
+    };
+
+    // Vérifier si un article est en favori
+    const isFavorite = (article) => {
+        return favorites.some(fav => fav.id === article.id && fav.type === 'article');
     };
 
     // Nouvelle fonction pour normaliser (sans accents, sans casse)
@@ -136,7 +179,16 @@ const JournalPage = () => {
                         <div className="I-details-content">
                             {selectedArticle ? (
                                 <>
-                                    <h2>{selectedArticle.title}</h2>
+                                    <div className="article-header">
+                                        <h2>{selectedArticle.title}</h2>
+                                        <button 
+                                            className={`favorite-btn ${isFavorite(selectedArticle) ? 'favorited' : ''}`}
+                                            onClick={() => toggleFavorite(selectedArticle)}
+                                            title={isFavorite(selectedArticle) ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                                        >
+                                            {isFavorite(selectedArticle) ? '❤️' : '🤍'}
+                                        </button>
+                                    </div>
                                     <img src={selectedArticle.image} alt={selectedArticle.title} />
                                     <p>{selectedArticle.description}</p>
                                 </>
