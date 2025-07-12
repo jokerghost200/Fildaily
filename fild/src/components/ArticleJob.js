@@ -10,8 +10,8 @@ import Ressources_Humaines from './Assets/Ressources_Humaines.png';
 import Serveu from './Assets/Serveu.jpg'
 import Superviseur_des_Promoteurs_en_Electroménager from './Assets/Superviseur_des_Promoteurs_en_Electroménager.png'
 import { Link } from 'react-router-dom';
-import Footer from "./Footer";
 import MenuDeroulant from './MenuDeroulant';
+import SearchBar from './SearchBar';
 
 
 const articles = [
@@ -192,10 +192,20 @@ Missions :<br/><br/>
 
 const JournalPage = () => {
     const [selectedArticle, setSelectedArticle] = useState(null);
+    const [searchQuery, setSearchQuery] = useState(''); // Ajout de l'état pour la recherche
 
     const handleArticleClick = (article) => {
         setSelectedArticle(article);
     };
+
+    // Nouvelle fonction pour normaliser (sans accents, sans casse)
+    function normalizeString(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
+
+    const filteredArticles = articles.filter(article =>
+        normalizeString(article.title).includes(normalizeString(searchQuery))
+    );
 
     return (
         <div className='I-cont'>
@@ -220,8 +230,11 @@ const JournalPage = () => {
                     </div>
                 </div>
                 <div className="I-sidebar">
+                    <div className="search-container">
+                        <SearchBar setSearchQuery={setSearchQuery} />
+                    </div>
                     <h2>Articles</h2>
-                    {articles.map((article) => (
+                    {filteredArticles.map((article) => (
                         <div
                             key={article.id}
                             className="I-article"
@@ -234,7 +247,6 @@ const JournalPage = () => {
                 </div>
             </div>
             </main>
-            <Footer />
         </div>
     );
 };

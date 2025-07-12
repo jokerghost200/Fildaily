@@ -182,3 +182,242 @@ justify-content: center;
   top: 12%;
   right: 0;
 }
+
+/* Conteneur de la partie article */
+.article-container {
+  position: relative;
+  /* autres styles éventuels */
+}
+
+/* Barre de recherche fixée à droite de la partie article */
+.search-bar {
+  position: absolute;   /* ou fixed si tu veux qu'elle reste visible même au scroll de la page */
+  top: 20px;            /* ajuste selon le besoin */
+  right: 20px;          /* colle à droite du conteneur article */
+  z-index: 10;          /* pour qu'elle soit au-dessus du fond mais PAS au-dessus du contenu principal */
+  width: 300px;         /* ajuste la largeur selon ton design */
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* Pour éviter la superposition avec le contenu de l'article */
+.article-content {
+  margin-right: 340px; /* largeur de la search-bar + marge, ajuste selon la largeur réelle */
+}
+
+/* Boutons flottants qui suivent le scroll */
+.floating-buttons {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.floating-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f8eaf, #3498db);
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.floating-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.floating-btn:hover::before {
+  left: 100%;
+}
+
+.btn-tooltip {
+  position: absolute;
+  right: 70px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.floating-btn:hover .btn-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .floating-buttons {
+    right: 10px;
+    gap: 8px;
+  }
+  
+  .floating-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+  }
+  
+  .btn-tooltip {
+    display: none;
+  }
+  
+  /* Ajustements pour mobile */
+  .body-accueil {
+    padding: 10px;
+  }
+  
+  .header {
+    padding: 20px 10px;
+  }
+  
+  .btn-accueil {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .btn-accueil button {
+    width: 100%;
+    margin: 5px 0;
+  }
+  
+  .profile-picture2 {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .profile-picture2 img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-buttons {
+    right: 5px;
+    gap: 5px;
+  }
+  
+  .floating-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 14px;
+  }
+  
+  .header {
+    height: auto;
+    min-height: 60px;
+    padding: 10px;
+  }
+  
+  .btn-accueil-b,
+  .btn-accueil-b2 {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+/* Amélioration de la responsivité pour les pages de contenu */
+@media (max-width: 1024px) {
+  .I-journal-container {
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  .I-details {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    margin-bottom: 20px;
+  }
+  
+  .I-sidebar {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+  }
+  
+  .I-header2 {
+    height: 60px;
+  }
+  
+  main {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .I-details {
+    max-height: 40vh;
+  }
+  
+  .I-sidebar {
+    max-height: 35vh;
+  }
+  
+  .I-article {
+    margin: 5px 0;
+  }
+  
+  .I-article-image {
+    height: 80px;
+  }
+}
+
+/* Animation pour les boutons flottants */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-50%) translateX(5px);
+  }
+}
+
+.floating-buttons {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Optimisation pour les écrans tactiles */
+@media (hover: none) {
+  .floating-btn:hover {
+    transform: scale(1);
+  }
+  
+  .floating-btn:active {
+    transform: scale(0.95);
+  }
+}

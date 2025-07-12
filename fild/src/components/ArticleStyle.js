@@ -114,8 +114,13 @@ const JournalPage = () => {
         setSelectedArticle(article);
     };
 
+    // Nouvelle fonction pour normaliser (sans accents, sans casse)
+    function normalizeString(str) {
+        return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+    }
+
     const filteredArticles = articles.filter(article =>
-        article.title.toLowerCase().includes(searchQuery.toLowerCase())
+        normalizeString(article.title).includes(normalizeString(searchQuery))
     );
 
 
@@ -126,7 +131,6 @@ const JournalPage = () => {
                 <h1><Link to='/Chats'>Mon Journal</Link></h1>
             </header>
             <main>
-                <SearchBar setSearchQuery={setSearchQuery} /> {/* Ajout de la barre de recherche */}
                 <div className="I-journal-container">
                     <div className="I-details">
                         <div className="I-details-content">
@@ -142,6 +146,9 @@ const JournalPage = () => {
                         </div>
                     </div>
                     <div className="I-sidebar">
+                        <div className="search-container">
+                            <SearchBar setSearchQuery={setSearchQuery} />
+                        </div>
                         <h2>Articles</h2>
                         {filteredArticles.map((article) => (
                             <div
@@ -156,9 +163,6 @@ const JournalPage = () => {
                     </div>
                 </div>
             </main>
-                  <footer className="footer">
-        <p> 2023 Mon Journal. Tous droits réservés.</p>
-      </footer>
         </div>
     );
 };

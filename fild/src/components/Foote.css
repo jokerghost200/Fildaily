@@ -16,3 +16,141 @@ footer p {
     margin: 0;
     font-size: 14px;
 }
+
+/* Animation pour le footer */
+.animated-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.time-display {
+  animation: pulse 2s ease-in-out infinite;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+/* Animation pour le header */
+.header {
+  background: linear-gradient(-45deg, #1f8eaf, #2c3e50, #3498db, #2980b9);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animation pour le header de l'accueil */
+.body-accueil .header {
+  background: linear-gradient(-45deg, #1f8eaf, #2c3e50, #3498db, #2980b9, #e74c3c, #f39c12);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* Animation pour les boutons du header */
+.btn-accueil button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-accueil button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-accueil button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-accueil button:hover::before {
+  left: 100%;
+}
+
+/* Responsive Design pour le footer */
+@media (max-width: 768px) {
+  footer {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+  
+  footer p {
+    font-size: 12px;
+  }
+  
+  .time-display {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 6px 0;
+    font-size: 11px;
+  }
+  
+  footer p {
+    font-size: 11px;
+  }
+  
+  .time-display {
+    font-size: 10px;
+  }
+}
+
+/* Optimisation pour les écrans tactiles */
+@media (hover: none) {
+  .animated-footer::before {
+    animation: shimmer 5s infinite;
+  }
+  
+  .time-display {
+    animation: pulse 3s ease-in-out infinite;
+  }
+}

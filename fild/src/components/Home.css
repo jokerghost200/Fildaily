@@ -63,6 +63,24 @@ main {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
+/* Ajustement pour la sidebar avec la barre de recherche */
+.I-sidebar {
+    margin-left: 75%;
+    flex: 1;
+    padding: 20px;
+    width: calc(30vw - 75px);
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    background-color: rgba(65, 113, 168, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.I-sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
 .article {
     padding: 10px;
     margin-top: 10px; /* Ajusté pour un espacement plus uniforme */
@@ -110,17 +128,6 @@ img {
 
 .par {
     overflow-wrap: break-word; /* Ajusté pour que le texte ne déborde pas */
-}
-
-.search-container {
-    margin: 10px 0; /* Espacement autour de la barre de recherche */
-    z-index: 1;
-    position: relative; 
-    left: 0;
-    box-shadow: #333 0px 0px 10px; /* Ombre pour la zone des détails */
-    top: 80px; /* Sous le header */
-    width: 40vw; /* Ajusté pour simplifier */
-
 }
 
 .search-input {

@@ -38,11 +38,45 @@ function HeaderOnlyOnHome() {
   );
 }
 
+// Composant pour les boutons flottants
+function FloatingButtons() {
+  const location = useLocation();
+  
+  // Ne pas afficher sur la page d'accueil
+  if (location.pathname === "/") return null;
+
+  return (
+    <div className="floating-buttons">
+      <Link to="/" className="floating-btn home-btn">
+        <span>🏠</span>
+        <span className="btn-tooltip">Accueil</span>
+      </Link>
+      <Link to="/Home" className="floating-btn actu-btn">
+        <span>📰</span>
+        <span className="btn-tooltip">ActuZone</span>
+      </Link>
+      <Link to="/ArticleJob" className="floating-btn job-btn">
+        <span>💼</span>
+        <span className="btn-tooltip">JobZone</span>
+      </Link>
+      <Link to="/Profile" className="floating-btn profile-btn">
+        <span>👤</span>
+        <span className="btn-tooltip">Profil</span>
+      </Link>
+      <Link to="/Chats" className="floating-btn chat-btn">
+        <span>💬</span>
+        <span className="btn-tooltip">Chats</span>
+      </Link>
+    </div>
+  );
+}
+
 function App() {
   return (
     <Router>
       <div className="App">
         <HeaderOnlyOnHome />
+        <FloatingButtons />
         <Routes>
           <Route path="/Chats" element={<Chats />} />
           <Route path="/MenuDeroulant" element={<MenuDeroulant />} />
@@ -56,10 +90,10 @@ function App() {
           <Route path="/LoginPage" element={<LoginPage />} />
           <Route path="/Footer" element={<Footer />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
 };
-
 
 export default App;

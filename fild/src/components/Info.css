@@ -11,7 +11,9 @@
   width: 100%;
     text-align: center;
   height: 80px; /* ou selon ton besoin */
-  background-color: #1f8eaf;
+  background: linear-gradient(-45deg, #1f8eaf, #2c3e50, #3498db, #2980b9);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
   z-index: 1000;
 }
 
@@ -116,4 +118,156 @@ img {
 .I-par{
     text-box: 300px;
     overflow-wrap: break-word
+}
+
+/* Responsive Design pour les pages de contenu */
+@media (max-width: 1024px) {
+  .I-journal-container {
+    flex-direction: column;
+    margin: 10px;
+    gap: 20px;
+  }
+  
+  .I-details {
+    position: relative;
+    left: auto;
+    width: 100%;
+    height: auto;
+    max-height: 50vh;
+    margin-bottom: 20px;
+    border-right: none;
+    border-bottom: 2px solid #1f1d1d;
+  }
+  
+  .I-sidebar {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .I-header2 {
+    height: 60px;
+    font-size: 14px;
+  }
+  
+  main {
+    margin-top: 60px;
+  }
+  
+  .I-details-content {
+    padding: 15px;
+  }
+  
+  .I-details-content p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .I-details {
+    max-height: 40vh;
+  }
+  
+  .I-sidebar {
+    max-height: 35vh;
+    padding: 15px;
+  }
+  
+  .I-article {
+    margin: 8px 0;
+    padding: 8px;
+  }
+  
+  .I-article-image {
+    height: 80px;
+  }
+  
+  .I-article h3 {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .I-header2 {
+    height: 50px;
+    font-size: 12px;
+  }
+  
+  main {
+    margin-top: 50px;
+  }
+  
+  .I-journal-container {
+    margin: 5px;
+  }
+  
+  .search-container {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .I-details {
+    max-height: 35vh;
+  }
+  
+  .I-sidebar {
+    max-height: 30vh;
+    padding: 10px;
+  }
+  
+  .I-article {
+    margin: 5px 0;
+    padding: 5px;
+  }
+  
+  .I-article-image {
+    height: 60px;
+  }
+  
+  .I-article h3 {
+    font-size: 12px;
+  }
+  
+  .I-header2 {
+    height: 45px;
+    font-size: 11px;
+  }
+  
+  main {
+    margin-top: 45px;
+  }
+  
+  .I-details-content {
+    padding: 10px;
+  }
+  
+  .I-details-content p {
+    font-size: 12px;
+  }
+}
+
+/* Optimisation pour les écrans tactiles */
+@media (hover: none) {
+  .I-article:hover {
+    transform: none;
+  }
+  
+  .I-article:active {
+    background-color: #e0e0e0;
+  }
+}
+
+/* Amélioration de l'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+  .I-article {
+    transition: none;
+  }
+  
+  .I-article:hover {
+    transform: none;
+  }
 }

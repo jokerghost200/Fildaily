@@ -13,8 +13,8 @@ function Footer() {
   }, []);
 
   return (
-    <footer style={{ textAlign: 'center', padding: '10px', backgroundColor: '#222', color: '#fff' }}>
-      <p>{dateTime.toLocaleDateString()} - {dateTime.toLocaleTimeString()}</p>
+    <footer className="animated-footer" style={{ textAlign: 'center', padding: '10px', backgroundColor: '#222', color: '#fff' }}>
+      <p className="time-display">{dateTime.toLocaleDateString()} - {dateTime.toLocaleTimeString()}</p>
     </footer>
   );
 }
