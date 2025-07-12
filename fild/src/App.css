@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+.body-accueil {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("./components/Assets/f1.jpg");
+  color: #1a1919; /* Couleur du t   exte blanche */
+  background-size: cover; /* Assure que l'image couvre tout l'écran */
+  background-position: center; /* Centre l'image de fond */
+  overflow: hidden;
+  overflow-x: scroll;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  width: 100vw;
+  height: 20vh;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 40px 0;
+  background-size: 300% 300%;
+  background: radial-gradient(circle, rgba(0, 119, 204, 0.5), rgba(32, 5, 189, 0.5), rgba(15, 34, 207, 0.5));
+  overflow: hidden;
+  animation: slideIn 1s ease forwards ;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes slideIn{
+  from{
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.profile-picture2 {
+right: 20px;
+top: 10px;
+justify-content: center;
+  overflow: hidden;
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+}
+
+
+.profile-picture2 img {
+  object-fit: cover;
+  width: 150px; /* Largeur de la photo */
+  height: 150px; /* Hauteur de la photo */
+  border-radius: 100%; /* Rendre l'image circulaire */
+  object-fit: cover; /* Ajuster l'image pour qu'elle remplisse le cercle */
+  background: url(https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80) no-repeat center center; /* Image de fond */
+  background-size: cover; /* Couvrir tout l'espace */
+  overflow: hidden; /* Cacher les débordements */
+  display: block; /* Afficher comme un bloc */
+  margin: 0 auto; /* Centrer l'image */
+  position: relative; /* Position relative pour les effets */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+.profile-picture2:hover{
+  transform: scale(1.2);
+  transition: transform cubic-bezier(0.86, 0, 0.2, 1) ease-in-out; /* Transition pour l'effet de zoom */
+
+}
+
+
+
+.btn-accueil{
+  position: relative;
+  top: 20%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 12px 12px 24px rgba(111, 192, 212, 0.2); /* Ombre pour le bouton */
+}
+
+
+.btn-accueil-b {
+  display: inline-block;
+  position: fixed; 
+  top: 60%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  font-size: 30px;
+  padding: 10px 20px;
+  border-radius: 10px; 
+  margin: 15px; 
+}
+.btn-accueil-b :link, .btn-accueil-b2 :link, .btn-accueil :link{
+  text-decoration: none;
+  border: none;
+}
+
+.btn-accueil-b2 {
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  font-size: 30px;
+  padding: 10px 20px;
+  border-radius: 10px; 
+  margin: 15px; 
+}
+
+.btn-accueil-b:hover, .btn-accueil-b2:hover, .btn-accueil button:hover {
+  background: radial-gradient(circle, rgba(0, 119, 204, 0.5), rgba(0, 152, 163, 0.5), rgba(61, 25, 160, 0.5));  color: white; /* Couleur du texte au survol */
+  cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+  animation: gradientShift 2s ease infinite;
+  background-size: 500% 300%; /* Ajouté */
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/*menu deroulant*/
+.dropdown {
+  position:relative ; /* Position relative pour le menu */
+}
+
+
+.dropdown-icon {
+  background: none;
+  position: absolute; /* Fixe l'icône dans le conteneur */
+  top: 50%;           /* Centre verticalement */
+  right: 20px;        /* Décale depuis la droite */
+  transform: translateY(-50%); /* Centre parfaitement */
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2;         /* Au-dessus du menu */
+}
+
+.dropdown-menu {
+  position: relatif; /* Positionnement relatif pour le menu */
+  top: 100%; /* Positionne le menu juste en dessous de l'icône */
+  right: 0; /* Aligne à droite */
+  background-color: #9b9696; /* Couleur de fond du menu */
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Ombre */
+  z-index: 1; /* Assure que le menu est au-dessus des autres éléments */
+}
+
+.dropdown-menu ul {
+  list-style-type: none; /* Supprime les puces */
+  padding: 0; /* Supprime le rembourrage */
+  margin: 0; /* Supprime la marge */
+}
+
+.dropdown-menu li {
+  margin: 8px 0;
+}
+
+.dropdown-menu a {
+  text-decoration: none; /* Supprime le soulignement */
+  color: #333; /* Couleur du texte */
+  display: block; /* Permet de cliquer sur toute la zone */
+  padding: 10px 15px; /* Rembourrage pour les liens */
+}
+
+.dropdown-menu a:hover {
+  background-color: #ddd; /* Couleur de fond au survol */
+}
+.menuD{
+  display: inline-block;
+  position: absolute;
+  top: 12%;
+  right: 0;
 }
