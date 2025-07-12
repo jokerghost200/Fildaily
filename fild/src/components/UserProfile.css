@@ -1,0 +1,114 @@
+
+.Profile{
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.user-profile-container {
+  font-family: Arial, sans-serif; /* Police générale */
+  padding: 20px; /* Espacement autour de la page */
+}
+
+.user-profile {
+  max-width: 800px; /* Largeur maximale du profil */
+  margin: auto; /* Centrer le profil */
+  backdrop-filter: blur(2px);
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre pour le relief */
+  padding: 20px; /* Espacement interne */
+}
+
+.user-header {
+  display: flex; /* Utiliser Flexbox pour l'alignement */
+  align-items: center; /* Centrer verticalement */
+  justify-content: center; /* Centrer horizontalement */
+    backdrop-filter: blur(8px);
+  color: white; /* Couleur du texte */
+  padding: 20px; /* Espacement interne */
+  border-radius: 10px; /* Coins arrondis */
+  margin-bottom: 20px; /* Espacement en bas */
+}
+
+.profile-picture {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  margin-right: 40px; /* Espacement à droite de la photo */
+    justify-content: center;
+}
+
+
+.profile-picture img {
+  object-fit: cover;
+  width: 150px; /* Largeur de la photo */
+  height: 150px; /* Hauteur de la photo */
+  border-radius: 100%; /* Rendre l'image circulaire */
+  object-fit: cover; /* Ajuster l'image pour qu'elle remplisse le cercle */
+  background: url(https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80) no-repeat center center; /* Image de fond */
+  background-size: cover; /* Couvrir tout l'espace */
+  overflow: hidden; /* Cacher les débordements */
+  display: block; /* Afficher comme un bloc */
+  margin: 0 auto; /* Centrer l'image */
+  position: relative; /* Position relative pour les effets */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+.profile-picture:hover{
+  transform: scale(1.7);
+  transition: transform cubic-bezier(0.86, 0, 0.2, 1) ease-in-out; /* Transition pour l'effet de zoom */
+
+}
+
+.user-info {
+  text-align: center; /* Centrer le texte */
+}
+
+.user-info h1 {
+  font-size: 2em; /* Taille de police */
+  margin: 0; /* Supprimer les marges par défaut */
+}
+
+.logout-button {
+  background-color: #3c5be7; /* Couleur du bouton */
+  color: white; /* Couleur du texte du bouton */
+  border: none; /* Supprimer la bordure */
+  border-radius: 5px; /* Coins arrondis */
+  padding: 10px 20px; /* Espacement interne du bouton */
+  cursor: pointer; /* Changer le curseur au survol */
+  margin-top: 10px; /* Espacement au-dessus du bouton */
+  transition: background-color 0.3s; /* Transition pour l'effet au survol */
+}
+
+.logout-button:hover {
+  background-color: #c0392b; /* Couleur au survol */
+}
+
+section {
+  margin-bottom: 20px; /* Espacement entre les sections */
+}
+
+h2 {
+  color: #333; /* Couleur du texte des titres */
+  border-bottom: 2px solid #007bff; /* Ligne en bas des titres */
+  padding-bottom: 5px; /* Espacement sous les titres */
+}
+
+ul {
+  list-style-type: none; /* Supprimer les puces */
+  padding: 0; /* Supprimer le padding */
+}
+
+li {
+  background-color: #f0f0f0; /* Couleur de fond des éléments de liste */
+  padding: 10px; /* Espacement interne des éléments de liste */
+  border-radius: 5px; /* Coins arrondis */
+  margin-bottom: 10px; /* Espacement entre les éléments de liste */
+}

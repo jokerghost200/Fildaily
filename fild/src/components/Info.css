@@ -1,0 +1,119 @@
+/*partie */
+.I-cont {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.I-header2 {
+   position: fixed;
+  top: 0;
+  width: 100%;
+    text-align: center;
+  height: 80px; /* ou selon ton besoin */
+  background-color: #1f8eaf;
+  z-index: 1000;
+}
+
+
+
+main {
+  flex: 1;
+  margin-top: 80px;
+}
+
+
+.I-journal-container {
+    display: flex;
+    margin: 20px;
+    margin-top: 60px; /* Espace pour le header fixe */
+}
+
+.I-details {
+    position: fixed; /* Fixe la zone des détails à gauche */
+    left: 0;
+    box-shadow: #333 0px 0px 10px; /* Ombre pour la zone des détails */
+    top: 80px; /* Sous le header */
+    width: calc(70vw); /* Largeur fixe pour la zone des détails */
+    height: calc(100vh - 80px); /* Prend toute la hauteur moins la hauteur du header */
+    overflow: auto; /* Permet le défilement horizontal et vertical */
+    background-color: #f1eeee; /* Couleur de fond */
+    border-right: 1px solid #1f1d1d; /* Ligne de séparation */
+}
+
+.I-details-content {
+    padding: 20px; /* Espacement interne pour le contenu des détails */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+}
+.I-details-content p {
+    text-wrap: wrap; /* Permet le retour à la ligne */
+    margin: 1px 15px 10px 0; /* Marge des paragraphes */
+    color: #030303; /* Couleur du texte */
+    font-size: 16px; /* Taille de police pour les paragraphes */
+}
+
+.I-sidebar {
+    margin-left: 75%; /* Espace à gauche pour la zone des détails */
+    flex: 1; /* Prend le reste de l'espace disponible */
+    padding: 20px;
+    width: calc(30vw - 75px); /* Prend toute la largeur moins la largeur de la zone des détails */
+    height: calc(100vh - 80px); /* Prend toute la hauteur moins la hauteur du header */
+    overflow-y: auto; /* Permet le défilement vertical uniquement */
+    background-color: rgba(65, 113, 168, 0.2); /* Couleur de fond */
+}
+
+.I-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.I-article {
+    padding: 10px;
+    margin-top: 0px;
+    cursor: pointer;
+    border: 1px solid #8f6868;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    gap: -15px; /* Espace entre les articles */
+
+}
+
+.I-article:hover {
+    background-color: #f0f0f0; /* Changement de couleur au survol */
+    transform: scale(1.05);
+}
+
+h2, h3 {
+    margin: 0 0 10px 0; /* Marge des titres */
+}
+.I-article h2 {
+    font-size: 1.2em; /* Taille de police pour les titres */
+    color: #333; /* Couleur du texte des titres */
+}
+.I-article-image {
+    width: 100%;
+    height: calc(100px - 20px); /* Ajuste la hauteur pour laisser de l'espace pour le texte */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%; /* Assure que l'image ne déborde pas */
+    height: auto; /* Garde le ratio de l'image */
+}
+
+.I-profile-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligne à droite */
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+
+.I-par{
+    text-box: 300px;
+    overflow-wrap: break-word
+}

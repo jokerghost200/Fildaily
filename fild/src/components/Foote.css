@@ -1,0 +1,18 @@
+footer {
+  position: fixed; /* ou 'fixed' si tu veux qu'il soit toujours visible */
+  bottom: 0;
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}

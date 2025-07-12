@@ -1,0 +1,15 @@
+.search-container {
+    margin: 20px 0; /* Espacement autour de la barre de recherche */
+}
+
+.search-input {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    padding: 10px; /* Espacement intérieur */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 16px; /* Taille de la police */
+}
+
+.search-input::placeholder {
+    color: #aaa; /* Couleur du texte du placeholder */
+}

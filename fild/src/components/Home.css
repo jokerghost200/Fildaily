@@ -1,0 +1,136 @@
+/* Partie principale */
+.cont {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header2 {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    height: 80px; /* ou selon ton besoin */
+    background-color: #1f8eaf;
+    z-index: 1000;
+}
+
+main {
+    flex: 1;
+    margin-top: 80px; /* Espace pour le header fixe */
+}
+
+.journal-container {
+    display: flex;
+    margin: 20px;
+    margin-top: 60px; /* Espace pour le header fixe */
+}
+
+.details {
+    position: fixed; /* Fixe la zone des détails à gauche */
+    left: 0;
+    box-shadow: #333 0px 0px 10px; /* Ombre pour la zone des détails */
+    top: 80px; /* Sous le header */
+    width: 70vw; /* Ajusté pour simplifier */
+    height: calc(100vh - 80px); /* Prend toute la hauteur moins la hauteur du header */
+    overflow: auto; /* Permet le défilement horizontal et vertical */
+    background-color: #f1eeee; /* Couleur de fond */
+    border-right: 1px solid #1f1d1d; /* Ligne de séparation */
+}
+
+.details-content {
+    padding: 20px; /* Espacement interne pour le contenu des détails */
+}
+
+.details-content p {
+    margin: 1px 15px 10px 0; /* Marge des paragraphes */
+    color: #030303; /* Couleur du texte */
+    font-size: 16px; /* Taille de police pour les paragraphes */
+}
+
+.sidebar {
+    margin-left: 75%; /* Espace à gauche pour la zone des détails */
+    flex: 1; /* Prend le reste de l'espace disponible */
+    padding: 20px;
+    width: 30vw; /* Ajusté pour simplifier */
+    height: calc(100vh - 80px); /* Prend toute la hauteur moins la hauteur du header */
+    overflow-y: auto; /* Permet le défilement vertical uniquement */
+    background-color: rgba(65, 113, 168, 0.2); /* Couleur de fond */
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.article {
+    padding: 10px;
+    margin-top: 10px; /* Ajusté pour un espacement plus uniforme */
+    cursor: pointer;
+    border: 1px solid #8f6868;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.article:hover {
+    background-color: #f0f0f0; /* Changement de couleur au survol */
+    transform: scale(1.05);
+}
+
+h2, h3 {
+    margin: 0 0 10px 0; /* Marge des titres */
+}
+
+.article h2 {
+    font-size: 1.2em; /* Taille de police pour les titres */
+    color: #333; /* Couleur du texte des titres */
+}
+
+.article-image {
+    width: 100%;
+    height: 80px; /* Ajusté pour une meilleure proportion */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%; /* Assure que l'image ne déborde pas */
+    height: auto; /* Garde le ratio de l'image */
+}
+
+.profile-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligne à droite */
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+.par {
+    overflow-wrap: break-word; /* Ajusté pour que le texte ne déborde pas */
+}
+
+.search-container {
+    margin: 10px 0; /* Espacement autour de la barre de recherche */
+    z-index: 1;
+    position: relative; 
+    left: 0;
+    box-shadow: #333 0px 0px 10px; /* Ombre pour la zone des détails */
+    top: 80px; /* Sous le header */
+    width: 40vw; /* Ajusté pour simplifier */
+
+}
+
+.search-input {
+    width: 100%; /* Prend toute la largeur du conteneur */
+    padding: 10px; /* Espacement intérieur */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 16px; /* Taille de la police */
+}
+
+.search-input::placeholder {
+    color: #aaa; /* Couleur du texte du placeholder */
+}

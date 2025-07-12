@@ -1,0 +1,165 @@
+/* File: fild/src/components/LoginForm/Loginform.css */
+html, body{
+    /* Styles for the body */
+    height: 100%;
+    margin: 0;
+}
+
+
+.login-page {
+  /* Styles for the login page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80') no-repeat;
+  background-size: cover;
+    background-position: center;
+}
+.wrapper{
+   top: 50%;
+   left: 50%;
+    align-items:center;
+    display: flex;
+    width:400px;
+    background: transparent;
+    background: rgba(197, 10, 10, 0.0005);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    color: #f3efef;
+    border-radius: 10%;
+    padding: 20px 60px;
+}
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+    color: #0c0c0c; ;
+}
+
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    margin: 30px 0;
+    text-align: center;
+    
+}
+.input-box input{  /* Input field style */
+    width: 100%;
+    height: none;
+    background: transparent;
+    border: 3px solid rgba(105, 82, 82, 0.5);
+    outline: none;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 19px;
+    color: #070707;
+    padding: 5px 15px 10px 20px;
+    border-color: rgba(104, 99, 99, 0.5);
+} 
+
+.input-box input::placeholder{ /* Placeholder text style*/
+    color: #140c0c;
+    text-align: center;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+    font-size: 15px;
+}
+
+.wrapper .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input{
+    accent-color: #010418;
+    margin-right: 6px;
+}
+.wrapper .remember-forgot :hover{
+    color: #010418;
+}
+
+.wrapper .remember-forgot a{
+    color: #ededf1;
+    text-decoration: none;
+}
+.wrapper .remember-forgot a:hover{
+    color: #09090a;
+    text-decoration: underline;
+}
+
+.wrapper button{
+    width: 60%;
+    height: 30px;
+    background: #ecedf0;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 60px;
+    outline: none;
+    position: relative;
+    left: 65px;
+    top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+}
+
+.wrapper button:hover{
+    background: #0f101b;
+    color: #fff;
+}
+
+.wrapper .register-link{
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+    padding: 12px 0;
+}
+.wrapper .register-link a{
+    color: #010418;
+    text-decoration: none;
+    font-weight: 600;
+}
+.wrapper .register-link a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+
+.login-form-container {
+  top: 50%;
+  left: 50%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  /* Ajoutez d'autres styles ici */
+}
+
+.ty{
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  top: 300px;
+  left: -300px;
+  transform: translateX(-50%);
+  text-decoration: none;
+    color: #010418;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+.ty:hover{
+  color: #fff;
+  text-decoration: underline;
+}

@@ -1,0 +1,119 @@
+
+.register-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width:100vw;
+  background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80') no-repeat;
+  background-size: cover;
+    background-position: center;
+}
+
+/* Met le formulaire et la photo côte à côte */
+.register-form-content {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Espace entre le formulaire et la photo */
+  background: rgba(255,255,255,0.05); /* Optionnel : léger fond pour le bloc */
+  border-radius: 12px;
+  padding: 32px 24px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Le formulaire ne déborde pas */
+.register-form-wrapper {
+  width: 400px;
+  background: transparent;
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* La photo à droite, bien centrée verticalement */
+.register-img {
+    position: absolute;
+    top: 50px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.register-input-box {
+    position: relative;
+    margin-bottom: 15px;
+    align-items: ;
+    color: aqua;
+    align-items: center;
+}
+
+.register-input-box input {
+    width: 300px;
+    height: none;
+    background: transparent;
+    border: 3px solid rgba(105, 82, 82, 0.5);
+    outline: none;
+    border-radius: 60px;
+    text-align: center;
+    font-size: 19px;
+    color: #2cf005;
+    padding: 5px 15px 10px 20px;
+    border-color: rgba(104, 99, 99, 0.5);
+}
+.register-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.register-button {
+    width: 60%;
+    height: 30px;
+    background: #ecedf0;
+    color: #0c0c0c;
+    text-align: center;
+    border: none;
+    border-radius: 60px;
+    outline: none;
+    position: relative;
+    left: 0%;
+    top: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: 600;
+}
+
+.register-button:hover {
+    color: #fff; /* Couleur du texte au survol */
+    background: #0c0c0c; /* Couleur du bouton au survol */
+}
+
+.register-login-link {
+    position: relative;
+    margin-top: 20px;
+    margin-left: -20px;
+    text-align: center;
+    text-decoration: none;
+}
+.register-login-link a {
+    color: #ededf1;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.register-login-link a:hover {
+    color: #09090a;
+    text-decoration: underline;
+}
